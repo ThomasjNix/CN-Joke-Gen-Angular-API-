@@ -1,0 +1,8 @@
+form{
+  padding: 2em;
+  text-align: center;
+}
+form select{
+  width: 15em;
+  margin: 0 auto;
+}

@@ -4,7 +4,7 @@
     <h4>First, select which category you'd like to receive a joke from</h4>
     <div class="form-group">
       <label for="cat_select">Category</label>
-      <select name="" id="cat_select" class="form-control">
+      <select name="" id="cat_select" class="form-control" (change)="setValue($event)">
         <option value="{{ cat }}" *ngFor="let cat of categories">{{ cat }}</option>
       </select>
     </div>

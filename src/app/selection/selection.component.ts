@@ -9,6 +9,7 @@ import { CategoriesService } from '../categories.service';
 })
 export class SelectionComponent implements OnInit {
   categories: any = ['any'];
+  selectedCategory: string = "any";
 
   @Output() jokeSubmission = new EventEmitter<{category: string}>();
   constructor(private categoriesService: CategoriesService) { }
@@ -21,8 +22,11 @@ export class SelectionComponent implements OnInit {
     });
   }
 
+  setValue(event){
+    this.selectedCategory = event.srcElement.selectedOptions[0].value;
+  }
   submitJokeRequest(event){
-    this.jokeSubmission.emit({category: this.categories[0]});
+    this.jokeSubmission.emit({category: this.selectedCategory});
   }
 
 }

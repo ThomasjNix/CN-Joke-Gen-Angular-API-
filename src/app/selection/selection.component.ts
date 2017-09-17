@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CategoriesService } from '../categories.service';
+
 
 @Component({
   selector: 'app-selection',
@@ -9,15 +10,19 @@ import { CategoriesService } from '../categories.service';
 export class SelectionComponent implements OnInit {
   categories: any = ['any'];
 
+  @Output() jokeSubmission = new EventEmitter<{category: string}>();
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
-    console.log(this.categoriesService.getCategories());
     this.categoriesService.getCategories().subscribe(categories => {
       for (let category of categories){
         this.categories.push(category);
       }
     });
+  }
+
+  submitJokeRequest(event){
+    this.jokeSubmission.emit({category: this.categories[0]});
   }
 
 }

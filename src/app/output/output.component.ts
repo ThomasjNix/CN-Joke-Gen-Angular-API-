@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-output',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./output.component.css']
 })
 export class OutputComponent implements OnInit {
-  category: string;
-  joke: string;
-  jokeIsLoaded: boolean = false;
+  @Input() joke: {
+    joke: string,
+    category: string,
+    jokeGenerated: boolean
+  }
+
   constructor() { }
 
   ngOnInit() {
+    this.joke.jokeGenerated = false;
   }
 
 }

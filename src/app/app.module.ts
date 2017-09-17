@@ -7,6 +7,7 @@ import { OutputComponent } from './output/output.component';
 import { CreditsComponent } from './credits/credits.component';
 import { AboutComponent } from './about/about.component';
 import { CategoriesService } from './categories.service';
+import { GetJokeService } from './get-joke.service';
 import { Http } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
@@ -22,7 +23,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     HttpModule
   ],
-  providers: [CategoriesService],
+  providers: [CategoriesService, GetJokeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

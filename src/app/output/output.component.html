@@ -1,7 +1,7 @@
 <!-- Joke display -->
 <div class="panel">
-  <h4 *ngIf="jokeIsLoaded; else jokePreloadTemplate">Joke from {{ category }}</h4>
-  <p><em>{{ joke }}</em></p>
+  <h4 *ngIf="joke.jokeGenerated; else jokePreloadTemplate">Joke from {{ joke.category === "any" ? "any category" : joke.category }}</h4>
+  <p><em>{{ joke.joke }}</em></p>
 </div>
 
 <ng-template #jokePreloadTemplate>'

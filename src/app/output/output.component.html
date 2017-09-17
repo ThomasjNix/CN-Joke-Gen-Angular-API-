@@ -1,5 +1,10 @@
 <!-- Joke display -->
 <div class="panel">
-  <h4>Joke from //INSERT CATEGORY//</h4>
-  <p><em>JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM JOKE IPSUM</em></p>
+  <h4 *ngIf="jokeIsLoaded; else jokePreloadTemplate">Joke from {{ category }}</h4>
+  <p><em>{{ joke }}</em></p>
 </div>
+
+<ng-template #jokePreloadTemplate>'
+  <h4>Get your joke!</h4>
+  <p><em>Select a category and press submit to receive a joke!</em></p>
+</ng-template>

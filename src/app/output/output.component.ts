@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./output.component.css']
 })
 export class OutputComponent implements OnInit {
-
+  category: string;
+  joke: string;
+  jokeIsLoaded: boolean = false;
   constructor() { }
 
   ngOnInit() {

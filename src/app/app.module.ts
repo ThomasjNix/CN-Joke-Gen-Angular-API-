@@ -6,6 +6,9 @@ import { SelectionComponent } from './selection/selection.component';
 import { OutputComponent } from './output/output.component';
 import { CreditsComponent } from './credits/credits.component';
 import { AboutComponent } from './about/about.component';
+import { CategoriesService } from './categories.service';
+import { Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { AboutComponent } from './about/about.component';
     AboutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [CategoriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
